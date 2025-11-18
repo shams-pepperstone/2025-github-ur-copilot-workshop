@@ -1,41 +1,46 @@
-# Pomodoro Timer Web App
+# Pomodoro Timer Web App - Phase 1
 
-A simple and elegant Pomodoro Timer web application built with Flask and vanilla JavaScript. This app helps you stay focused and productive using the Pomodoro Technique.
+## Phase 1: Project Scaffold & Backend Foundation
 
-## Features
+This is the initial Phase 1 implementation providing the basic project structure and Flask backend foundation.
 
-- **Timer Functionality**: 25-minute work sessions with 5-minute short breaks and 15-minute long breaks
-- **Session Tracking**: Visual progress indicator showing completed sessions
-- **Customizable Settings**: Adjust work and break durations to your preference
-- **Session Logging**: Automatic logging of completed and skipped sessions
-- **Responsive Design**: Works on desktop and mobile devices
-- **Browser Notifications**: Get notified when sessions complete
+## Current Status
 
-## Pomodoro Technique
+**Phase 1 - COMPLETE** ✅
 
-The Pomodoro Technique uses a timer to break work into intervals:
-1. 25 minutes of focused work
-2. 5-minute short break
-3. Repeat 4 times
-4. Take a 15-minute long break after 4 sessions
+This phase includes:
+- ✅ Basic Flask app serving the root route
+- ✅ Static file serving configured (CSS, JS)
+- ✅ Placeholder HTML template with "Pomodoro Timer App" text
+- ✅ Empty stub files for `static/style.css` and `static/timer.js`
+- ✅ Basic test suite with pytest
+- ✅ Clean project structure following architecture.md
+
+## Project Structure
+
+```
+pomodoro_app/
+├── app.py                  # Minimal Flask application
+├── templates/
+│   └── index.html         # Placeholder HTML template
+├── static/
+│   ├── style.css          # Empty stub (to be implemented)
+│   └── timer.js           # Empty stub (to be implemented)
+├── test_app.py            # Basic pytest tests
+└── README.md              # This file
+```
 
 ## Installation & Setup
 
-1. **Clone the repository**:
+1. **Create virtual environment**:
    ```bash
-   git clone <repository-url>
-   cd pomodoro_app
-   ```
-
-2. **Create virtual environment**:
-   ```bash
-   uv venv
+   python3 -m venv .venv
    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    ```
 
-3. **Install dependencies**:
+2. **Install dependencies**:
    ```bash
-   uv pip install Flask
+   pip install Flask pytest pytest-flask
    ```
 
 ## Running the Application
@@ -55,76 +60,36 @@ The Pomodoro Technique uses a timer to break work into intervals:
    http://127.0.0.1:5000
    ```
 
-## Usage
+   You should see a page displaying "Pomodoro Timer App"
 
-1. **Start a Session**: Click the "Start" button to begin a 25-minute work session
-2. **Pause/Resume**: Click "Start" again to pause, and once more to resume
-3. **Reset**: Click "Reset" to restart the current session
-4. **Skip**: Click "Skip" to move to the next session (break or work)
-5. **Settings**: Click "Settings" to customize session durations
-6. **Progress**: Watch the dots at the bottom to track your progress through the 4-session cycle
+## Running Tests
 
-## Project Structure
+Run the test suite with pytest:
 
-```
-pomodoro_app/
-├── app.py                  # Flask backend server
-├── templates/
-│   └── index.html         # Main HTML template
-├── static/
-│   ├── style.css          # CSS styling
-│   └── timer.js           # JavaScript timer logic
-├── pomodoro_log.txt       # Session log file (created automatically)
-└── README.md              # This file
+```bash
+pytest test_app.py -v
 ```
 
-## API Endpoints
+All tests should pass, confirming:
+- Root route returns 200 OK
+- HTML content is served correctly
+- Placeholder text is present
+- Static files are accessible
 
-- `GET /` - Serves the main timer page
-- `POST /log` - Logs session events (completed/skipped)
-- `GET /history` - Returns session history (optional)
+## Next Steps
 
-## Session Logging
+Future phases will implement:
+- **Phase 2**: Frontend structure with HTML/CSS layout
+- **Phase 3**: Timer functionality in JavaScript
+- **Phase 4**: Backend logging and session tracking
+- **Phase 5**: Full integration and polish
 
-The app automatically logs all session events to `pomodoro_log.txt` with the following format:
-```
-timestamp | session_type | action | session_number
-```
+## Architecture
 
-Example:
-```
-2024-01-15 14:30:00 | work | completed | session_1
-2024-01-15 14:55:00 | short_break | completed | session_1
-```
+This project follows the architecture outlined in `architecture.md`. The minimal Phase 1 implementation establishes:
+- Flask web server with proper routing
+- Static file serving capability
+- Template rendering
+- Test infrastructure
 
-## Customization
-
-### Settings
-- **Work Duration**: Default 25 minutes (adjustable 1-60 minutes)
-- **Short Break**: Default 5 minutes (adjustable 1-30 minutes)  
-- **Long Break**: Default 15 minutes (adjustable 1-60 minutes)
-
-Settings are saved in your browser's localStorage and persist between sessions.
-
-### Browser Notifications
-The app requests permission for browser notifications to alert you when sessions complete. You can enable/disable this in your browser settings.
-
-## Development
-
-### Adding Features
-- Modify `app.py` for backend changes
-- Edit `timer.js` for timer logic updates
-- Update `style.css` for styling changes
-- Modify `index.html` for UI structure changes
-
-### Testing
-Run the Flask app in debug mode (default) to see detailed error messages and automatic reloading during development.
-
-## Browser Support
-- Chrome 60+
-- Firefox 55+
-- Safari 11+
-- Edge 79+
-
-## License
-MIT License - feel free to use and modify as needed.
+No timer functionality is implemented at this stage - only the foundation for serving web pages and static assets.
