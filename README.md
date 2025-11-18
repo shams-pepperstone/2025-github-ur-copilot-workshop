@@ -251,7 +251,3 @@ This project demonstrates:
 ## 📄 License
 
 This project is open source and available for educational purposes.
-
-## 🙏 Acknowledgments
-
-Created for GitHub Universe Recap 2025 workshop in Jakarta, Indonesia, demonstrating the power of GitHub Copilot for rapid application development.
