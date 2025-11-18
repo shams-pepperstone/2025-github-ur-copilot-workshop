@@ -1,6 +1,6 @@
 # GitHub Copilot Workshop
 
-This is a sample repository for GitHub Copilot Workshop at GitHub Universe Recap 2025, Jakarta, Indonesia.
+This is a sample repository for GitHub Copilot Workshop.
 
 Using the files in this repository, we created a fully functional **Pomodoro Timer Web Application** using Python (Flask), JavaScript, HTML, and CSS.
 
